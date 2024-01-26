@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Получение задачи (GET)</title>
+<title>Диаграмма</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,124 +435,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Получение задачи (GET)</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>Метод получения задачи.</p>
+<p>В данной диаграмме использован следующий функционал PlantUML:
+автонумерация действий, алиасы, спец. значки для объектов (actor  и т.п.)
+title, skinparam, цвет фона участника, строковые переменные,
+HTML-цвета, примечания, группировка в alt, activate/deactivate,
+группировка участников в box (в выделением цветом).</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_входные_параметры">Входные параметры</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Входные параметры приведены в таблице ниже.</p>
+<p>Примечание: не использован else.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Входные параметры</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Параметр</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Ключ</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Тип</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Не пустой</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Описание</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Идентификтор задачи</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">task_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Число</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Идентификатор задачи</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_выходные_параметры">Выходные параметры</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Выходные параметры:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>в случае успеха вернуть параметры задачи, указанные в таблице;</p>
-</li>
-<li>
-<p>иначе вернуть описание ошибки.</p>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Параметры задач</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Параметр</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Ключ</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Тип</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Не пустой</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Описание</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Заголовок задачи</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Однострочный текст</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Краткое описание задачи</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Описание</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Многострочный текст</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Полное описание задачи, что необходимо сделать</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Статус</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Однострочный текст</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Статус исполнения задачи.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_алгоритм">Алгоритм</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Алгоритм работы метода приведён на диаграмме.</p>
-</div>
-<div class="imageblock"><div class="content"><img class="plantuml" src="https://www.plantuml.com/plantuml/png/~1U9npA2v9B2efpStXuWApkBYiBio_iE_2xelD5zilxBZOTB57uSB-2nikDbpOS67FXQr0WOQBtGeNjWEvMu32G3NM83sJW58D5_O2TO5q09bRBso_s0mqfkTY4r1PapN8_Fm2BYw7rBmKe7K06FL3z000" /></div></div>
-<div class="paragraph">
-<p><a href="../index.html">Назад</a></p>
-</div>
-</div>
-</div>
+<h1 id="_диаграмма" class="sect0">Диаграмма</h1>
+<div class="imageblock"><div class="content"><img class="plantuml" src="https://www.plantuml.com/plantuml/png/~1U9o5Lbrh6qSKVPzVCLKBIK2odQHz4TGa9ZI59X18-jQNjJIsbqWhLpiEXLAmfA2KoZWjzAaFDMdUorgMgfLaoNzXvX_rt3kxAtabnuuTTcVlnpddVkm-2hNNr4VrclI2XlQqtmZaNgCfz_oQ4fjtX8bCtxRDtCninroQeJqsaUsQsBwNPc26PcnRUDmtiHaN9Oodk8fmrYjAsp9NSEXkI3CoCvo-CnCJazkKlEVctFw621CEtvTtlOf6OWaJszumLnltXFPrJHLb-DeF3hscLqVCBd8DRLlQjuJ9HD9s43TY53FadfY8CjisWCvnXyYsPuQIeHmZ7JZ0S4Q7HV7jg-VFIcbCyZHNC8gPAA9IHFiUfnVs6FIly2_ck7tA8m7Qg-cY173_ZQVLPbMbbqLnWyyANAAEtzt6J_8kNm8P2Jjbd34XpbZ3-FBUXZ1dUP1cM9Rc7BOZgMgXsX1tDeLtf1l1KNrNDKKce0pLZqSgg2Zviv3uUQx2qDjNZsl-VY1hQa_pwGjqX5_n3xr0l_2gLJ_Ob_UtjiGlmXL4chz1QWeMRTkJhdguENQA0CmCPoJsZ32NW3Co5_WRqIEKmhQMPAQJZ2SVWsDIkO691EbICF_26H5bIPeFY3IsxOBy_9c_Vw1tQaTAkCufc3CuJUq9Z1saDkbeJmhI2-NteMhAHhEA_-zlYSC5HVXzX8v3w4TTCQQ-JLB0xQMlLUBsO8jorjNJfbA1K46LYYP4rTFUhXSgnFbWFfe_p9_ikFCaSNkOptRcj4F6_zAClmBcgHcnurClo_ZbLiBofLUhDu9SdDzPwDY-PT469U2EkR6eoIEEzJZG_ZSfxQyGxRi3xxKlFllYiDcGNoF6Yk05aROmAoPOjjAsqw7islESEphYESJuTj3eA6dyGo1f8i4gvfgxnpYQerrWXdH_yKJ4Q9oJfKGKMt224Z9HnZBFDv9SKbCD4E62Iqf74UN1Zg2IJKe00-oW3XQIQ0ciCIMRf1hW_iCBfkMG455kEPfrQa1QGvFS7hEdrpWJPKeCevZMJejlU8j5wHuXGFqCCOZc4USZpf4gdLvMQUOs9mum28v6JW_8DgUTi80JiPqJuvhCIL7xF8FOk3VmSMbopswftzbIvAIAQykuZVPFeesfHrScU-6ryqHWL4hBy7XteAqGN_BE7g5jCCTSjlOglyNQfMYBkmnC4Zbv1Q3IxzmxfClDqAEDn7ivMR4t5s32QonYP2H0McPudwRXEjbCh2bykZYTUfbbXfI6lomv1n6_S1FDQX-dIutyOE30B9Fd0cHt54hmClaKYQjhouXfP7sCsjOqDf3t1iiEFFI1mbU2zlUQZL1BFvILHX2eYbRL9Czsid3ArsiKvp1pOqXg1Ym-I5RYoPkBP5kLCXrMYuzYhPIVDh78b4uKxBD1YvkFmqpu8sN4O7hKrr2OBjSAbW5eyRfgfMeDkC8dL9US9STsxpD7btEJMuVVTqioHvah3yajZYjlnELUpygxVdO-0U6ccN4gv0PdJkz6rlnsRlcnMUVBRm_YswLfcI--9iGZ51CVe-9_4ZFEEW00" /></div></div>
 </div>
 <div id="footer">
 <div id="footer-text">
