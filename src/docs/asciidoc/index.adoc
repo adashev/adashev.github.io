@@ -11,12 +11,10 @@
 . Изменять параметры задачи (xref:put/put.adoc[PUT]).
 . Удалять задачу (DELETE).
 
-include::ver.adoc[]
-
-
 == Примеры UML-диаграмм
 
-* Sequence диаграмма "Оплата товара в интернет-магазине с применением промокода" (xref:uml/babok.sequence.puml[см. диаграмму])
+* Sequence диаграмма "Оплата товара в интернет-магазине с применением промокода" (xref:uml/babok.sequence.html[см. диаграмму])
 * Sequence диаграмма "----"
 
+include::ver.adoc[]
 
