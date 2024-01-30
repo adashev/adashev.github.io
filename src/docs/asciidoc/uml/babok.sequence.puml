@@ -1,10 +1,9 @@
 @startuml anotation for file
 /'
-автонумерация действий, алиасы, спец. значки для объектов (actor  и т.п.)
-title, skinparam, цвет фона участника, строковые переменные,
-HTML-цвета, примечания, группировка в alt, activate/deactivate,
-группировка участников в box (в выделением цветом).
-Примечание: без else.
+Автонумерация, алиасы для объектов, спец. значки для объектов (actor, database и т.п.)
+title, skinparam, цвет фона участника, строковые переменные, примечания, activate/deactivate,
+группировка участников в box (с выделением цветом).
+Примечание: без alt и else.
 '/
 autonumber
 skinparam sequence {
@@ -13,7 +12,7 @@ skinparam sequence {
 }
 
 title Оплаты товара в интернет-магазине с применением промокода
-box "Юзер - Сайт" #LightBlue
+box #LightBlue
 actor "Пользователь" as User order 10
 participant "Учебный сайт" as Site order 20 #LimeGreen
 end box
@@ -25,43 +24,39 @@ participant "Антифрод-система" as AntiFr order 50 #Khaki
 activate User
 User -> Site : выбирает курс и\n нажимает кнопку "Купить"
 activate Site
-Site --> User: форма договора\n и чек-боксом $pro
-note right: Текст комментария к действию
-User -> Site: вводит свои данные\n в форму договора
+Site --> User: форма договора\n и чек-бокс $pro
+note right: Возможный комментарий
+User -> Site: заполняет форму договора
 User -> Site: отмечает наличие $pro
-Site --> User: поле ввода $pro\n и кнопку проверки
-User -> Site: ввод $pro
+Site --> User: поле $pro\n и кнопка "Проверить"
+User -> Site: вводит промокод
 User -> Site: нажимает кнопку "Проверить"
 
 activate Site
-Site -> BD: найти промокод
+Site -> BD: поиск $pro
 activate BD
-BD --> Site: вернуть результат проверки
+BD --> Site: результат проверки
 deactivate BD
 deactivate
 Site -> Site: пересчет цены с учетом $pro
-Site --> User: показать итоговую цену курса
-User -> Site: оплатить курс
-Site -> Gate: зарегистрировать заказ
+Site --> User: итоговая цена курса
+User -> Site: оплачивает курс
+Site -> Gate: регистрация заказа
 deactivate Site
 activate Gate
-Gate --> User: показать платежную форму
-
-alt #Lavender the antifrost is connected
-Gate -> AntiFr: проверить заказ на мошен-тво
+Gate --> User: платежная форма
+Gate -> AntiFr: проверка заказа на мошенничество
 AntiFr --> Gate: результаты проверки
-end 
-
-User -> Gate: ввести реквизиты карты
+User -> Gate: вводит реквизиты карты
 activate Gate
-Gate -> Gate: списать деньги
-Gate -> Gate: изменить статус платежа
-Gate -> BD: изменить статус промокода
-activate BD
-Gate --> Site: вернуть статус платежа
-deactivate BD
+Gate -> Gate: списание денег
+Gate -> Gate: смена статуса платежа
+Gate -> BD: смена статуса $pro
+Gate --> Site: статус платежа
 deactivate Gate
-Site -> Site: обновить статус платежа
-Site --> User: обновить страницу оплаты
+Site -> Site: обновление статуса платежа
+activate Site
+Site --> User: обновление страницы оплаты
+deactivate Site
 @enduml
 
