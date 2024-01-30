@@ -11,7 +11,7 @@ skinparam sequence {
     ParticipantPadding 100
 }
 
-title Оплаты товара в интернет-магазине с применением промокода
+title Оплата товара в интернет-магазине с применением промокода
 box #LightBlue
 actor "Пользователь" as User order 10
 participant "Учебный сайт" as Site order 20 #LimeGreen
