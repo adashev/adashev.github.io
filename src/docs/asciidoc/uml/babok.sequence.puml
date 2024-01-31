@@ -9,6 +9,7 @@ autonumber
 skinparam sequence {
     MessageAlign left
     ParticipantPadding 100
+    titleFontSize 18
 }
 
 title Оплата товара в интернет-магазине с применением промокода
