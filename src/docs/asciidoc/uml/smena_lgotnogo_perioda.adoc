@@ -9,4 +9,4 @@
 
 [plantuml, Smena_lgotnogo_perioda, png]
 ----
-include::Smena_lgotnogo_perioda.puml[]
+include::smena_lgotnogo_perioda.puml[]
