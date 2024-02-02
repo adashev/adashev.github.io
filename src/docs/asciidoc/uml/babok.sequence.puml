@@ -1,15 +1,14 @@
 @startuml anotation for file
 /'
 Автонумерация, алиасы для объектов, спец. значки для объектов (actor, database и т.п.)
-title, skinparam, цвет фона участника, строковые переменные, примечания, activate/deactivate,
-группировка участников в box (с выделением цветом).
+title, skinparam и др.
 Примечание: без alt и else.
 '/
 autonumber
 skinparam sequence {
     MessageAlign left
     ParticipantPadding 100
-    titleFontSize 18
+    titleFontSize 22
 }
 
 title Оплата товара в интернет-магазине с применением промокода
