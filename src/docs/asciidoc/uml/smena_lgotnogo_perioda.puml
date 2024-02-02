@@ -1,0 +1,52 @@
+@startuml name
+
+skinparam sequence {
+    MessageAlign center
+    ParticipantBorderColor Navy
+    ParticipantPadding 80
+    ParticipantBackgroundColor Ivory
+    ParticipantFontSize 15
+    ParticipantFontColor DarkRed
+    LifeLineBackgroundColor SkyBlue
+}
+
+skinparam titleFontSize 22
+title Смена льготного периода 115 дней
+participant "Моб. приложение" as mapp
+participant "Support Server" as ss
+participant "RBUS" as r
+participant "ABS" as a
+participant "Bifit" as b
+
+autonumber
+mapp -> ss++: запрос на доступность кнопки
+ss -> r++: запрос на доступность кнопки
+r -> a++: запрос на доступность кнопки
+a -> a: проверка условий доступности
+a --> r--: ответ
+r --> ss--: ответ
+ss --> mapp--: ответ
+
+alt status=0 Смена периода запрещена
+mapp -> mapp: Кнопка не отображается
+else status=1 Смена периода разрешена
+mapp -> mapp: Кнопка отображается
+else status=2  в обработке
+mapp -> mapp: Кнопка отображается 
+else status=3 Ошибка на ABS  (данные не найдены)
+mapp -> mapp:Кнопка не отображается
+end alt
+
+mapp -> b++: GET:/prest-api/protected/docs/create/{docType}
+b --> mapp--: response
+mapp -> b++:POST:/prest-api/protected/docs/save/{docType}
+b --> mapp--:Response
+
+legend left
+  **На диаграмму можно добавить легенду**
+  <#Moccasin>|= Объект |= Описание |
+  | RBUS | Интеграционная шина |
+  | Ссылка | [[https://plantuml.com]] |
+endlegend
+@enduml
+

@@ -13,8 +13,8 @@
 
 == Примеры UML-диаграмм
 
-* Sequence диаграмма "Оплата товара в интернет-магазине с применением промокода" (xref:uml/babok.sequence.html[см. диаграмму])
-* Sequence диаграмма "----"
+* Sequence диаграмма "Оплата товара в интернет-магазине с применением промокода" (xref:uml/babok.sequence.html[см. здесь])
+* Sequence диаграмма "Смена льготного периода на кредитной карте" (xref:uml/smena_lgotnogo_perioda.html[см. здесь])
 
 include::ver.adoc[]
 
